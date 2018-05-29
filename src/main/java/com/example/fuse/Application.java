@@ -20,12 +20,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
-/**
- * A spring-boot application that includes a Camel route builder to setup the Camel routes
- */
 @SpringBootApplication
 @ImportResource({"classpath:spring/camel-context.xml"})
 public class Application extends RouteBuilder {
+	
+	protected static final String TEST_SERVICE_BASE_URL = "http://services.odata.org/TripPinRESTierService";
 
     // must have a main method spring-boot can run
     public static void main(String[] args) {
@@ -35,7 +34,9 @@ public class Application extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("timer://foo?period=5000")
-            .from("sql:select * from funcionario?dataSource=dataSource")
-            .log(">>> ${body}");
+        .to("olingo4://read/Airports")
+//            .from("sql:select * from funcionario?dataSource=dataSource")
+        .log(">>> ${body}");
+
     }
 }
