@@ -8,7 +8,7 @@
   <servlet>
 		<servlet-name>Demo</servlet-name>
 		<servlet-class>com.example.demo.service.Servlet</servlet-class>
-		<load-on-startu>1</load-on-startup>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
