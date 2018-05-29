@@ -24,9 +24,6 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource({"classpath:spring/camel-context.xml"})
 public class Application extends RouteBuilder {
 	
-	protected static final String TEST_SERVICE_BASE_URL = "http://services.odata.org/TripPinRESTierService";
-
-    // must have a main method spring-boot can run
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -34,7 +31,7 @@ public class Application extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("timer://foo?period=5000")
-        .to("olingo4://read/Airports")
+        .to("olingo4://read/BusinessPartners")
 //            .from("sql:select * from funcionario?dataSource=dataSource")
         .log(">>> ${body}");
 

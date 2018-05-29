@@ -22,7 +22,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class OlingoComponent extends RouteBuilder{
 
-	protected static final String OLINGO_BASE_URL = "http://services.odata.org/TripPinRESTierService";
+//	protected static final String OLINGO_BASE_URL = "http://services.odata.org/TripPinRESTierService";
+	protected static final String OLINGO_BASE_URL = "http://localhost:8080/demo-jpa/Demo.svc";
 
 	@Override
 	public void configure() throws Exception {
