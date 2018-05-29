@@ -3,3 +3,5 @@ bin
 .classpath
 .project
 .settings
+log-camel-lsp.out
+*/target

@@ -1,0 +1,47 @@
+= Fuse Odata Example
+
+This is a very basic simple project showing how to expose OData using Olingo4 JPA processor 
+and consume it using Red Hat Fuse (Camel).
+
+This project consists of two partes the server part (odata-server) and client (fuse-odata-client).
+
+== Odata Server 
+
+=== Pre requirements
+
+    git clone https://github.com/SAP/olingo-jpa-processor-v4
+    cd olingo-jpa-processor-v4
+    mvn clean install 
+
+=== Build 
+
+    mvn clean install 
+
+=== Run 
+
+The build phase generates a simple web application, servlet based so you need to 
+deploy in a web server like Tomcat or Wildfly. 
+
+
+This sample was built using the Tutorial Session of olingo-jpa-processor-v4: https://github.com/SAP/olingo-jpa-processor-v4/blob/develop/jpa-tutorial/Tutorials/Introduction/Introduction.md
+
+
+=== Test
+
+    http://localhost:8080/odata-Server/Demo.svc/BusinessPartners?$format=JSON
+
+
+== Fuse odata client 
+
+=== Build
+
+    mvn clean package 
+
+=== Run 
+
+    mvn spring-boot:run 
+
+Check the logs.
+
+
+
